@@ -48,6 +48,7 @@
     <Compile Include="Lizards\BabyLizard.cs" />
     <Compile Include="Lizards\Lizard.cs" />
     <Compile Include="Lizards\QueenLizard.cs" />
+    <Compile Include="Path.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

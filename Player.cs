@@ -8,16 +8,18 @@ namespace ProjectGame
 {
     internal class Player
     {
-        private string playerName;
+        public string playerName;
         private int playerHealth;
         private int playerAttackPower;
         private bool isAlive;
+        public int currentPath;
         
         public Player(string name) {
             playerName = name;
             playerHealth = 100;
             playerAttackPower = 0;
             isAlive = true;
+            currentPath = 0;
         }
 
         public void TakeDamage(int damage)
@@ -37,6 +39,7 @@ namespace ProjectGame
         {
             playerAttackPower += power;
         }
-
+        public int GetAttackPower() { return playerAttackPower; }
+        public bool IsAlive() { return isAlive; }
     }
 }
