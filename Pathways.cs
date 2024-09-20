@@ -9,7 +9,8 @@ namespace ProjectGame
 {
     internal class Pathways
     {
-        //
+        //Get the path story based on the users selection using switch case funcion that calls each path function.
+        //Inside each path, there is a reference to mustFight bool which the GAME class uses to determine if a fight is happening
         public string GetPathStory(Player player, Lizard lizard)
         {
             switch (player.currentPath)
@@ -19,9 +20,22 @@ namespace ProjectGame
                 case 2:
                     BabyLizard babyLizard = new BabyLizard();
                     return PathTwo(babyLizard, player);
-                //case 3:
-                //    return PathThree(lizard, player);
-                //    //TODO: Finish building story paths and cases
+                case 3:
+                    return PathThree(lizard, player);
+                case 4:
+                    return PathFour(player);
+                case 5:
+                    return PathFive(lizard, player);
+                case 6:
+                    return PathSix(player);
+                case 7:
+                    return PathSeven(lizard, player);
+                case 8:
+                    return PathEight(player);
+                case 9:
+                    return PathNine(lizard, player);
+                case 10:
+                    return PathTen(lizard, player);
                 default:
                     return "Someting broke...";
 
