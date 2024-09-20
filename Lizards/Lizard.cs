@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ProjectGame
 {
@@ -13,7 +14,14 @@ namespace ProjectGame
 
         public void AttackPlayer(Player player)
         {
-
+            if (player.GetHealth() > attackPower)
+            {
+                player.SetHealth(attackPower);
+            }
+            else
+            {
+                player.SetHealth(player.GetHealth());
+            }
         }
         public int GetAttackPower()
         {
@@ -23,5 +31,6 @@ namespace ProjectGame
         {
             return health;
         }
+        public int SetHealth(int delta) { return health -= delta; }
     }
 }

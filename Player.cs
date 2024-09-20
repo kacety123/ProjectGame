@@ -23,11 +23,11 @@ namespace ProjectGame
             currentPath = 0;
         }
 
-        public void TakeDamage(int damage)
+        public void AttackLizard(Lizard lizard)
         {
-            if (playerHealth > damage)
+            if (lizard.GetHealth() > playerAttackPower)
             {
-                playerHealth -= damage;
+                lizard.SetHealth(playerAttackPower);
             }
             else
             {
@@ -43,5 +43,10 @@ namespace ProjectGame
         public int GetAttackPower() { return playerAttackPower; }
         public bool IsAlive() { return isAlive; }
         public int GetHealth() { return playerHealth; }
+        public int SetHealth(int delta)
+        {
+            return playerHealth -= delta;
+        }
+        public int GainHealth() { return playerHealth += 10; }
     }
 }

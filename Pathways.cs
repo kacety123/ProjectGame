@@ -30,6 +30,7 @@ namespace ProjectGame
         private string PathOne(Player player)
         {
             player.mustFight = false;
+            player.SetHealth
             return "Now entering path 1... \r\n" +
                 "Lucky for you, path 1 is a safe path, there appears to be no Lizard beasts. But remember to choose your next path wisely, for you may be doomed! \r\n" +
                 "You gain 10 Attack pts";
