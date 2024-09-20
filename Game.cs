@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace ProjectGame
 {
-    internal class Game
+    internal static class Game
     {
-        public static void StartGame(Player player)
+        public static void StartGame()
         {
             //get the players name and initialize player stats, paths, etc.
-            player = new Player(UserIO.GetPlayerName());
+            Player player = new Player(UserIO.GetPlayerName());
             Pathways path = new Pathways();
             List<int> paths = new List<int> { 1, 2 };
             Lizard lizard;
@@ -38,26 +38,31 @@ namespace ProjectGame
                 }
                 UserIO.DisplayPathStory(path.GetPathStory(player, lizard));
                 //TODO: Utilize attack sequence for player, generate random to determine who attacks first. 
-                switch (RollFirstAttack())
+                if (player.mustFight)
                 {
-                    case 1: //Player attacks first
-                        
-                        break;
+                    switch (RollFirstAttack())
+                    {
+                        case 1: //Player attacks first
+                            PlayerAttacksFirst(player, lizard);
+                            break;
 
-                    case 2: //Lizard attacks first
-                        LizzardAttacksFirst(player, lizard);
-                        break;
+                        case 2: //Lizard attacks first
+                            LizzardAttacksFirst(player, lizard);
+                            break;
+                    }
+                    if (player.IsAlive())
+                    {
+                        UserIO.DisplaySuccessMessage(player);
+                    }
+                    else
+                    {
+                        UserIO.DisplayPlayerDiedMessage();
+                    }
                 }
                 //if player is not alive, display message and end game
                 //if player is alive, display message with updated stats that player defeated lizard
-                if (player.IsAlive())
-                {
-                    UserIO.DisplaySuccessMessage(player);
-                }
-
-
                 
-
+                paths = SetPlayerPaths(paths);
 
             }
             
@@ -70,9 +75,9 @@ namespace ProjectGame
         //Incrementor method that will increment the previous path list items by 1 to create two new path choices
         public static List<int> SetPlayerPaths(List<int> path) {
         
-            foreach(int i in path)
+            for (int i = 0; i< path.Count(); i++)
             {
-                path[i]++;
+                path[i]+=2;
             }
             return path;
         }

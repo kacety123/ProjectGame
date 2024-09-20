@@ -19,9 +19,11 @@ namespace ProjectGame
                 case 2:
                     BabyLizard babyLizard = new BabyLizard();
                     return PathTwo(babyLizard, player);
-                case 3:
-                    return PathThree(lizard, player);
-                    //TODO: Finish building story paths and cases
+                //case 3:
+                //    return PathThree(lizard, player);
+                //    //TODO: Finish building story paths and cases
+                default:
+                    return "Someting broke...";
                     
 
             }

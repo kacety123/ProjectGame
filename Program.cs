@@ -10,6 +10,7 @@ namespace ProjectGame
     {
         static void Main(string[] args)
         {
+            Game.StartGame();
 
         }
     }

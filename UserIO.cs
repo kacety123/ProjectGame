@@ -24,7 +24,7 @@ namespace ProjectGame
         }
         public static void OfferPath(List<int> paths)
         {
-            Console.Write($"Choose wisely, there are two paths in front of you. Enter numerical {paths[1]} or numerical {paths[2]}: ");
+            Console.Write($"Choose wisely, there are two paths in front of you. Enter numerical {paths[0]} or numerical {paths[1]}: ");
         }
 
         public static int GetPlayerChoice(List<int> paths)
@@ -32,7 +32,7 @@ namespace ProjectGame
             while (true)
             {
                 string playerChoice = Console.ReadLine();
-                if (playerChoice == paths[1].ToString() || playerChoice == paths[2].ToString())
+                if (playerChoice == paths[0].ToString() || playerChoice == paths[1].ToString())
                 {
                     return Convert.ToInt32(playerChoice);
                 }
@@ -53,7 +53,11 @@ namespace ProjectGame
                 $"You won this round, defeating the lizzard!\r\n" +
                 $"Your stats are...\r\n" +
                 $"Health: {player.GetHealth()}\r\n" +
-                $"Attack Power: {player.GetAttackPower()}");
+                $"Attack Power: {player.GetAttackPower()}\r\n");
+        }
+        public static void DisplayPlayerDiedMessage()
+        {
+            Console.WriteLine("Oh dear...You have tragically been defeated by a lowly lizard lifeform...Better luck next time! FOOL!");
         }
     }
 }
