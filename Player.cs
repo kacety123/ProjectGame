@@ -31,8 +31,7 @@ namespace ProjectGame
             }
             else
             {
-                playerHealth = 0;
-                isAlive = false;
+                lizard.SetHealth(lizard.GetHealth());
             }
         }
 
@@ -42,11 +41,12 @@ namespace ProjectGame
         }
         public int GetAttackPower() { return playerAttackPower; }
         public bool IsAlive() { return isAlive; }
+        public void SetIsAlive(bool alive) {  isAlive = alive; }
         public int GetHealth() { return playerHealth; }
         public int SetHealth(int delta)
         {
             return playerHealth -= delta;
         }
-        public int GainHealth() { return playerHealth += 10; }
+        public void GainHealth() { playerHealth += 10; }
     }
 }

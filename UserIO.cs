@@ -47,6 +47,13 @@ namespace ProjectGame
             Console.WriteLine(path);
 
         }
-        
+        public static void DisplaySuccessMessage(Player player)
+        {
+            Console.WriteLine($"Congratulations!\r\n" +
+                $"You won this round, defeating the lizzard!\r\n" +
+                $"Your stats are...\r\n" +
+                $"Health: {player.GetHealth()}\r\n" +
+                $"Attack Power: {player.GetAttackPower()}");
+        }
     }
 }

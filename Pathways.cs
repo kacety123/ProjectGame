@@ -9,6 +9,7 @@ namespace ProjectGame
 {
     internal class Pathways
     {
+        //
         public string GetPathStory(Player player, Lizard lizard)
         {
             switch (player.currentPath)
@@ -30,7 +31,7 @@ namespace ProjectGame
         private string PathOne(Player player)
         {
             player.mustFight = false;
-            player.SetHealth
+            player.GainHealth();
             return "Now entering path 1... \r\n" +
                 "Lucky for you, path 1 is a safe path, there appears to be no Lizard beasts. But remember to choose your next path wisely, for you may be doomed! \r\n" +
                 "You gain 10 Attack pts";
@@ -46,7 +47,9 @@ namespace ProjectGame
                 $"Health: {player.GetHealth()}\r\n" +
                 $"\r\n \r\n The Lizards stats are...\r\n" +
                 $"Attack Power: {baby.GetAttackPower()}\r\n" +
-                $"Health: {baby.GetHealth()}";
+                $"Health: {baby.GetHealth()}\r\n" +
+                $"How ever will you manage to attack and KILL a poor wittle innocent baby lizard?\r\n" +
+                $"P.S. Is that a friggin pacifier in its..mouth....?";
 
         }
     }

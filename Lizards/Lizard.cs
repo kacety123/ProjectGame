@@ -21,6 +21,7 @@ namespace ProjectGame
             else
             {
                 player.SetHealth(player.GetHealth());
+                player.SetIsAlive(false);
             }
         }
         public int GetAttackPower()

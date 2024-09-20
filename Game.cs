@@ -38,7 +38,22 @@ namespace ProjectGame
                 }
                 UserIO.DisplayPathStory(path.GetPathStory(player, lizard));
                 //TODO: Utilize attack sequence for player, generate random to determine who attacks first. 
+                switch (RollFirstAttack())
+                {
+                    case 1: //Player attacks first
+                        
+                        break;
 
+                    case 2: //Lizard attacks first
+                        LizzardAttacksFirst(player, lizard);
+                        break;
+                }
+                //if player is not alive, display message and end game
+                //if player is alive, display message with updated stats that player defeated lizard
+                if (player.IsAlive())
+                {
+                    UserIO.DisplaySuccessMessage(player);
+                }
 
 
                 
@@ -88,6 +103,31 @@ namespace ProjectGame
                 case 3:
                     return new QueenLizard();
                 default: return new BabyLizard();
+            }
+        }
+        //Random generator to determine who fights first
+        private static int RollFirstAttack()
+        {
+            Random random = new Random();
+            return random.Next(1, 2);
+        }
+        //function for Lizard to attack first
+        private static void LizzardAttacksFirst(Player player, Lizard lizard)
+        {
+            while (player.GetHealth() > 0 || lizard.GetHealth() > 0)
+            {
+                lizard.AttackPlayer(player);
+                player.AttackLizard(lizard);
+            }
+        }
+
+        //function for player to attack first
+        private static void PlayerAttacksFirst(Player player, Lizard lizard)
+        {
+            while (player.GetHealth() > 0 || lizard.GetHealth() > 0)
+            {
+                player.AttackLizard(lizard);
+                lizard.AttackPlayer(player);
             }
         }
 
