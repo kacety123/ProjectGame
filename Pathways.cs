@@ -52,7 +52,34 @@ namespace ProjectGame
                 $"Health: {baby.GetHealth()}\r\n" +
                 $"How ever will you manage to attack and KILL a poor wittle innocent baby lizard?\r\n" +
                 $"P.S. Is that a friggin pacifier in its..mouth....?";
-
         }
+        private string PathThree(Lizard lizard, Player player)
+        {
+            player.mustFight = true;
+            return $"Now entering path 3...\r\n" +
+                $"Oh HECK! (Seee sometimes I care about who I offend!)\r\n" +
+                $"A WILD {lizard.GetType().ToString()} appeared!\r\n" +
+                $"There's no option to run, or take another way...\r\n" +
+                $"Your stats are...\r\n" +
+                $"Health: {player.GetHealth()}\r\n" +
+                $"Attack Power: {player.GetAttackPower()}\r\n"+
+                $"The Lizards stats are ....\r\n" +
+                $"Attack Power: {lizard.GetAttackPower()}\r\n" +
+                $"Health: {lizard.GetHealth()}";
+        }
+        private string PathFour(Player player)
+        {
+            player.mustFight = false;
+            return $"Now entering path 4...\r\n" +
+                $"Well, it would appear that you got lucky this time.\r\n" +
+                $"There are no lizards here....\r\n" +
+                $"You gained 10 Attack Pts";
+        }
+        private string PathFive(Lizard lizard, Player player) {
+            player.mustFight = true;
+            return $"Now entering path...OH SHIT!\r\n" +
+                $"Its a Damned {lizard.GetType().Name}\r\n" +
+                $"Time to fight!\r\n" +
+                $""
     }
 }

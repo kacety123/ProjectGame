@@ -37,7 +37,7 @@ namespace ProjectGame
                     lizard = GetLizardType();
                 }
                 UserIO.DisplayPathStory(path.GetPathStory(player, lizard));
-                //TODO: Utilize attack sequence for player, generate random to determine who attacks first. 
+                //Utilize attack sequence for player, generate random to determine who attacks first. 
                 if (player.mustFight)
                 {
                     switch (RollFirstAttack())
@@ -50,6 +50,8 @@ namespace ProjectGame
                             LizzardAttacksFirst(player, lizard);
                             break;
                     }
+                    //if player is not alive, display message and end game
+                    //if player is alive, display message with updated stats that player defeated lizard
                     if (player.IsAlive())
                     {
                         UserIO.DisplaySuccessMessage(player);
@@ -59,17 +61,8 @@ namespace ProjectGame
                         UserIO.DisplayPlayerDiedMessage();
                     }
                 }
-                //if player is not alive, display message and end game
-                //if player is alive, display message with updated stats that player defeated lizard
-                
                 paths = SetPlayerPaths(paths);
-
             }
-            
-
-
-
-
         }
 
         //Incrementor method that will increment the previous path list items by 1 to create two new path choices
