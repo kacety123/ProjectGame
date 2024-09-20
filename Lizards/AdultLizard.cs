@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGame.Lizards
 {
-    internal class AdultLizard : ILizard
+    internal class AdultLizard : Lizard
     {
         public AdultLizard()
         {

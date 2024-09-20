@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGame.Lizards
 {
-    internal class BabyLizard : ILizard
+    internal class BabyLizard : Lizard
     {
         public BabyLizard()
         {

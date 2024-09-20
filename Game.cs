@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectGame.Lizards;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,40 +13,83 @@ namespace ProjectGame
         {
             //get the players name and initialize player stats, paths, etc.
             player = new Player(UserIO.GetPlayerName());
-            Path path = new Path();
+            Pathways path = new Pathways();
+            List<int> paths = new List<int> { 1, 2 };
+            Lizard lizard;
             //greet the player under the new name
             UserIO.GreetPlayer(player.playerName);
-            //offer the player their first path choice
-            path.pathNumbers = CheckPlayerPathing(player, path.pathNumbers);
-            UserIO.OfferPath();
-
-
-
-
-        }
-
-        public static Player ChoosePath(Player player)
-        {
-            player.GainAttack(10);
-            if player
-        }
-        public static List<int> CheckPlayerPathing(Player player, List<int> path) {
-        
-            if (player.currentPath == 0)
+            while(player.IsAlive() || paths.Contains(11) != true)
             {
-                return path;
-            }
-            else
-            {
-                if ()
+                //offer the path options to the player
+                UserIO.OfferPath(paths);
+                //get the players choice, will loop until the correct input is provided
+                int pathChosen = UserIO.GetPlayerChoice(paths);
+                //player gains 10 attack pts for choosing a path and set the players path in profile
+                player.GainAttack();
+                player.currentPath = pathChosen;
+                //Display path story and info
+                if(player.GetAttackPower() > 30)
                 {
-                    
+                    lizard = GetLizardTypeHL();
                 }
-                path.RemoveAt(player.currentPath);
-                   
+                else
+                {
+                    lizard = GetLizardType();
+                }
+                UserIO.DisplayPathStory(path.GetPathStory(player, lizard));
+                //TODO: Utilize attack sequence for player, generate random to determine who attacks first. 
+
+
+
+                
+
+
             }
+            
+
+
+
+
         }
 
+        //Incrementor method that will increment the previous path list items by 1 to create two new path choices
+        public static List<int> SetPlayerPaths(List<int> path) {
+        
+            foreach(int i in path)
+            {
+                path[i]++;
+            }
+            return path;
+        }
+        //Random Lizard generators based on level
+        private static Lizard GetLizardType()
+        {
+            Random random = new Random();
+            int roll = random.Next(1, 2);
+            switch (roll)
+            {
+                case 1:
+                    return new BabyLizard();
+                case 2:
+                    return new AdultLizard();
+                default: return new BabyLizard();
+            }
+        }
+        private static Lizard GetLizardTypeHL()
+        {
+            Random random = new Random();
+            int roll = random.Next(1, 3);
+            switch (roll)
+            {
+                case 1:
+                    return new BabyLizard();
+                case 2:
+                    return new AdultLizard();
+                case 3:
+                    return new QueenLizard();
+                default: return new BabyLizard();
+            }
+        }
 
     }
 }

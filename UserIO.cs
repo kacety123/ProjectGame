@@ -27,7 +27,26 @@ namespace ProjectGame
             Console.Write($"Choose wisely, there are two paths in front of you. Enter numerical {paths[1]} or numerical {paths[2]}: ");
         }
 
-        
+        public static int GetPlayerChoice(List<int> paths)
+        {
+            while (true)
+            {
+                string playerChoice = Console.ReadLine();
+                if (playerChoice == paths[1].ToString() || playerChoice == paths[2].ToString())
+                {
+                    return Convert.ToInt32(playerChoice);
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid path from the two options provided: ");
+                }
+            }
+        }
+        public static void DisplayPathStory(string path)
+        {
+            Console.WriteLine(path);
+
+        }
         
     }
 }

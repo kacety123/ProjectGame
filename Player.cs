@@ -13,6 +13,7 @@ namespace ProjectGame
         private int playerAttackPower;
         private bool isAlive;
         public int currentPath;
+        public bool mustFight;
         
         public Player(string name) {
             playerName = name;
@@ -35,11 +36,12 @@ namespace ProjectGame
             }
         }
 
-        public void GainAttack(int power)
+        public void GainAttack()
         {
-            playerAttackPower += power;
+            playerAttackPower += 10;
         }
         public int GetAttackPower() { return playerAttackPower; }
         public bool IsAlive() { return isAlive; }
+        public int GetHealth() { return playerHealth; }
     }
 }
