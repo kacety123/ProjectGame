@@ -14,7 +14,7 @@ namespace ProjectGame
         {
             switch (player.currentPath)
             {
-                case 1 :
+                case 1:
                     return PathOne(player);
                 case 2:
                     BabyLizard babyLizard = new BabyLizard();
@@ -24,11 +24,11 @@ namespace ProjectGame
                 //    //TODO: Finish building story paths and cases
                 default:
                     return "Someting broke...";
-                    
+
 
             }
         }
-        
+
 
         private string PathOne(Player player)
         {
@@ -39,7 +39,8 @@ namespace ProjectGame
                 "You gain 10 Attack pts";
         }
 
-        private string PathTwo(BabyLizard baby, Player player) {
+        private string PathTwo(BabyLizard baby, Player player)
+        {
 
             player.mustFight = true;
             return $"Now entering path 2... \r\n" +
@@ -62,7 +63,7 @@ namespace ProjectGame
                 $"There's no option to run, or take another way...\r\n" +
                 $"Your stats are...\r\n" +
                 $"Health: {player.GetHealth()}\r\n" +
-                $"Attack Power: {player.GetAttackPower()}\r\n"+
+                $"Attack Power: {player.GetAttackPower()}\r\n\r\n" +
                 $"The Lizards stats are ....\r\n" +
                 $"Attack Power: {lizard.GetAttackPower()}\r\n" +
                 $"Health: {lizard.GetHealth()}";
@@ -75,11 +76,77 @@ namespace ProjectGame
                 $"There are no lizards here....\r\n" +
                 $"You gained 10 Attack Pts";
         }
-        private string PathFive(Lizard lizard, Player player) {
+        private string PathFive(Lizard lizard, Player player)
+        {
             player.mustFight = true;
             return $"Now entering path...OH SHIT!\r\n" +
                 $"Its a Damned {lizard.GetType().Name}\r\n" +
                 $"Time to fight!\r\n" +
-                $""
+                $"Your stats are...\r\n" +
+                $"Health: {player.GetHealth()}\r\n" +
+                $"Attack Power: {player.GetAttackPower()}\r\n" +
+                $"\r\n" +
+                $"The lizards stats are {lizard.GetHealth()}" +
+                $"Attack Power: {lizard.GetAttackPower()}\r\n" +
+                $"Health: {lizard.GetHealth()}";
+        }
+        private string PathSix(Player player)
+        {
+            player.mustFight = false;
+            return $"Well you lucky little b*tch...\r\n" +
+                $"You made it to path 6 AND nothing to fight.\r\n" +
+                $"Rest easy, young padawan, for doom still awaits!\r\n" +
+                $"MWUAHAHAHAHAHAAAAAAA!";
+        }
+        private string PathSeven(Lizard lizard, Player player)
+        {
+            player.mustFight = true;
+            return $"Welcome to Paradize...\r\n" +
+                $"Said the mighty {lizard.GetType().Name} that stands before you...\r\n" +
+                $"Your stats are...\r\n" +
+                $"Health: {player.GetHealth()}\r\n" +
+                $"Attack Power: {player.GetAttackPower()}\r\n" +
+                $"\r\n" +
+                $"The lizards stats are {lizard.GetHealth()}" +
+                $"Attack Power: {lizard.GetAttackPower()}\r\n" +
+                $"Health: {lizard.GetHealth()}";
+        }
+        private string PathEight(Player player)
+        {
+            player.mustFight = false;
+            return $"Alright alright, your luck WILL run out, I promise you!\r\n" +
+                $"MOVE ON with your stupid +10\r\n" +
+                $"GO ALREADY!";
+        }
+        private string PathNine(Lizard lizard, Player player)
+        {
+            player.mustFight = true;
+            return $"It's the END of the line!\r\n" +
+                $"The exit is so CLOSE!\r\n" +
+                $"BUT there is a {lizard.GetType().Name} blocking you...\r\n" +
+                $"Your stats are...\r\n" +
+                $"Health: {player.GetHealth()}\r\n" +
+                $"Attack Power: {player.GetAttackPower()}\r\n" +
+                $"\r\n" +
+                $"The lizards stats are {lizard.GetHealth()}" +
+                $"Attack Power: {lizard.GetAttackPower()}\r\n" +
+                $"Health: {lizard.GetHealth()}";
+        }
+        private string PathTen(Lizard lizard, Player player)
+        {
+            player.mustFight = true;
+            return $"It's the other end of the line....\r\n" +
+                $"But alas, it IS the end!\r\n" +
+                $"Peering off just past the {lizard.GetType().Name} blocking your path, you can see bright light!\r\n" +
+                $"Will you survive, or will you DIE?\r\n" +
+                $"Probably die...\r\n" +
+                $"Your stats are...\r\n" +
+                $"Health: {player.GetHealth()}\r\n" +
+                $"Attack Power: {player.GetAttackPower()}\r\n" +
+                $"\r\n" +
+                $"The lizards stats are {lizard.GetHealth()}" +
+                $"Attack Power: {lizard.GetAttackPower()}\r\n" +
+                $"Health: {lizard.GetHealth()}";
+        }
     }
 }
