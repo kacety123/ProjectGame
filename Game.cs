@@ -119,20 +119,34 @@ namespace ProjectGame
         //function for Lizard to attack first
         private static void LizzardAttacksFirst(Player player, Lizard lizard)
         {
-            while (player.GetHealth() > 0 || lizard.GetHealth() > 0)
+            while (player.IsAlive())
             {
                 lizard.AttackPlayer(player);
-                player.AttackLizard(lizard);
+                if (player.GetHealth() > 0)
+                {
+                    player.AttackLizard(lizard);
+                }
+                else
+                {
+                    break;
+                }
             }
         }
 
         //function for player to attack first
         private static void PlayerAttacksFirst(Player player, Lizard lizard)
         {
-            while (player.GetHealth() > 0 || lizard.GetHealth() > 0)
+            while (player.IsAlive())
             {
                 player.AttackLizard(lizard);
-                lizard.AttackPlayer(player);
+                if (lizard.GetHealth() > 0)
+                {
+                    lizard.AttackPlayer(player);
+                }
+                else
+                {
+                    break;
+                }
             }
         }
 
