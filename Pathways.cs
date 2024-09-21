@@ -58,7 +58,7 @@ namespace ProjectGame
 
             player.mustFight = true;
             return $"Now entering path 2... \r\n" +
-                $"oooohhhh SNAP! A wild {baby.GetType().ToString()} appeared! You have no choice but to fight to move on! \r\n" +
+                $"oooohhhh SNAP! A wild {baby.GetType().Name} appeared! You have no choice but to fight to move on! \r\n" +
                 $"Your stats are...\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"Health: {player.GetHealth()}\r\n" +
@@ -73,7 +73,7 @@ namespace ProjectGame
             player.mustFight = true;
             return $"Now entering path 3...\r\n" +
                 $"Oh HECK! (Seee sometimes I care about who I offend!)\r\n" +
-                $"A WILD {lizard.GetType().ToString()} appeared!\r\n" +
+                $"A WILD {lizard.GetType().Name} appeared!\r\n" +
                 $"There's no option to run, or take another way...\r\n" +
                 $"Your stats are...\r\n" +
                 $"Health: {player.GetHealth()}\r\n" +
@@ -100,7 +100,7 @@ namespace ProjectGame
                 $"Health: {player.GetHealth()}\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"\r\n" +
-                $"The lizards stats are {lizard.GetHealth()}" +
+                $"The lizards stats are ..." +
                 $"Attack Power: {lizard.GetAttackPower()}\r\n" +
                 $"Health: {lizard.GetHealth()}";
         }
@@ -121,7 +121,7 @@ namespace ProjectGame
                 $"Health: {player.GetHealth()}\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"\r\n" +
-                $"The lizards stats are {lizard.GetHealth()}" +
+                $"The lizards stats are ..." +
                 $"Attack Power: {lizard.GetAttackPower()}\r\n" +
                 $"Health: {lizard.GetHealth()}";
         }
@@ -142,7 +142,7 @@ namespace ProjectGame
                 $"Health: {player.GetHealth()}\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"\r\n" +
-                $"The lizards stats are {lizard.GetHealth()}" +
+                $"The lizards stats are ..." +
                 $"Attack Power: {lizard.GetAttackPower()}\r\n" +
                 $"Health: {lizard.GetHealth()}";
         }
@@ -158,7 +158,7 @@ namespace ProjectGame
                 $"Health: {player.GetHealth()}\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"\r\n" +
-                $"The lizards stats are {lizard.GetHealth()}" +
+                $"The lizards stats are..." +
                 $"Attack Power: {lizard.GetAttackPower()}\r\n" +
                 $"Health: {lizard.GetHealth()}";
         }
