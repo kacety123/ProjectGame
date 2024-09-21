@@ -16,10 +16,14 @@ namespace ProjectGame
         }
         public static void Continue()
         {
-            Console.Write("Press Any Key to Continue...");
+            Console.Write("Press Enter to Continue...");
             Console.ReadKey();
         }
-
+        public static string GetUserReplayInput()
+        {
+            Console.WriteLine("Would you like to play again? Enter x to exit or any other character to continue");
+            return Console.ReadLine().ToString();
+        }
         public static void GreetPlayer(string playerName)
         {
             Console.WriteLine($"Well hello, and welcome to your doom...{playerName} \r\n" +

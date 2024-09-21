@@ -10,7 +10,12 @@ namespace ProjectGame
     {
         static void Main(string[] args)
         {
-            Game.StartGame();
+            string userReplay = "";
+            while (userReplay != "x" && userReplay != "X")
+            {
+                Game.StartGame();
+                userReplay = UserIO.GetUserReplayInput();
+            }
 
         }
     }
