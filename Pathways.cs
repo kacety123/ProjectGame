@@ -62,7 +62,7 @@ namespace ProjectGame
                 $"Your stats are...\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"Health: {player.GetHealth()}\r\n" +
-                $"\r\n \r\n The Lizards stats are...\r\n" +
+                $"\r\n \r\nThe Lizards stats are...\r\n" +
                 $"Attack Power: {baby.GetAttackPower()}\r\n" +
                 $"Health: {baby.GetHealth()}\r\n" +
                 $"How ever will you manage to attack and KILL a poor wittle innocent baby lizard?\r\n" +

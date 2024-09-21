@@ -14,6 +14,11 @@ namespace ProjectGame
             Console.WriteLine("Please Enter Your Desired Player Name: ");
             return Console.ReadLine();
         }
+        public static void Continue()
+        {
+            Console.Write("Press Any Key to Continue...");
+            Console.ReadKey();
+        }
 
         public static void GreetPlayer(string playerName)
         {
@@ -44,11 +49,15 @@ namespace ProjectGame
         }
         public static void DisplayPathStory(string path)
         {
+            Continue();
+            Console.Clear();
             Console.WriteLine(path);
 
         }
         public static void DisplaySuccessMessage(Player player)
         {
+            Continue();
+            Console.Clear();
             Console.WriteLine($"Congratulations!\r\n" +
                 $"You won this round, defeating the lizzard!\r\n" +
                 $"Your stats are...\r\n" +
@@ -57,6 +66,8 @@ namespace ProjectGame
         }
         public static void DisplayPlayerDiedMessage()
         {
+            Continue();
+            Console.Clear();
             Console.WriteLine("Oh dear...You have tragically been defeated by a lowly lizard lifeform...Better luck next time! FOOL!");
         }
     }

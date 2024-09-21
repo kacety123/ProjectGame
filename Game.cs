@@ -18,7 +18,7 @@ namespace ProjectGame
             Lizard lizard;
             //greet the player under the new name
             UserIO.GreetPlayer(player.playerName);
-            while(player.IsAlive() || paths.Contains(11) != true)
+            while(paths.Contains(11) != true)
             {
                 //offer the path options to the player
                 UserIO.OfferPath(paths);
@@ -55,10 +55,13 @@ namespace ProjectGame
                     if (player.IsAlive())
                     {
                         UserIO.DisplaySuccessMessage(player);
+                        UserIO.Continue();
                     }
                     else
                     {
                         UserIO.DisplayPlayerDiedMessage();
+                        UserIO.Continue();
+                        break;
                     }
                 }
                 paths = SetPlayerPaths(paths);
