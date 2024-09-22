@@ -25,10 +25,17 @@ namespace ProjectGame
                 //get the players choice, will loop until the correct input is provided
                 int pathChosen = UserIO.GetPlayerChoice(paths);
                 //player gains 10 attack pts for choosing a path and set the players path in profile
-                player.GainAttack();
                 player.currentPath = pathChosen;
                 //Display path story and info
-                if(player.GetAttackPower() > 30)
+                if(player.currentPath == 2)
+                {
+                    lizard = new BabyLizard();
+                }
+                else if(player.currentPath == 10)
+                {
+                    lizard = new QueenLizard();
+                }
+                else if(CheckPathLevel(paths))
                 {
                     lizard = GetLizardTypeHL();
                 }
@@ -91,19 +98,18 @@ namespace ProjectGame
                 default: return new BabyLizard();
             }
         }
+        //Get higher level lizards only if player reaches a path above 5
         private static Lizard GetLizardTypeHL()
         {
             Random random = new Random();
-            int roll = random.Next(1, 3);
+            int roll = random.Next(1, 2);
             switch (roll)
             {
                 case 1:
-                    return new BabyLizard();
-                case 2:
                     return new AdultLizard();
-                case 3:
+                case 2:
                     return new QueenLizard();
-                default: return new BabyLizard();
+                default: return new AdultLizard();
             }
         }
         //Random generator to determine who fights first
@@ -144,6 +150,18 @@ namespace ProjectGame
                     break;
                 }
             }
+        }
+        //function for paths to be checked for level. Return true if level is higher than 5
+        private static bool CheckPathLevel(List<int> paths)
+        {
+            foreach(int i in paths)
+            {
+                if (i > 5)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }

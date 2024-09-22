@@ -21,7 +21,8 @@ namespace ProjectGame
         }
         public static string GetUserReplayInput()
         {
-            Console.WriteLine("Would you like to play again? Enter x to exit or any other character to continue");
+            Console.WriteLine("Would you like to play again? \r\n" +
+                "Enter an x to exit or any other character to continue: ");
             return Console.ReadLine().ToString();
         }
         public static void GreetPlayer(string playerName)

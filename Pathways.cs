@@ -18,8 +18,7 @@ namespace ProjectGame
                 case 1:
                     return PathOne(player);
                 case 2:
-                    BabyLizard babyLizard = new BabyLizard();
-                    return PathTwo(babyLizard, player);
+                    return PathTwo(lizard, player);
                 case 3:
                     return PathThree(lizard, player);
                 case 4:
@@ -47,13 +46,14 @@ namespace ProjectGame
         private string PathOne(Player player)
         {
             player.mustFight = false;
-            player.GainHealth();
+            player.GainAttack();
             return "Now entering path 1... \r\n" +
-                "Lucky for you, path 1 is a safe path, there appears to be no Lizard beasts. But remember to choose your next path wisely, for you may be doomed! \r\n" +
+                "Lucky for you, path 1 is a safe path, there appears to be no Lizard beasts.\r\n" +
+                "But remember to choose your next path wisely, for you may be doomed! \r\n" +
                 "You gain 10 Attack pts";
         }
 
-        private string PathTwo(BabyLizard baby, Player player)
+        private string PathTwo(Lizard baby, Player player)
         {
 
             player.mustFight = true;
@@ -85,6 +85,7 @@ namespace ProjectGame
         private string PathFour(Player player)
         {
             player.mustFight = false;
+            player.GainAttack();
             return $"Now entering path 4...\r\n" +
                 $"Well, it would appear that you got lucky this time.\r\n" +
                 $"There are no lizards here....\r\n" +
@@ -100,13 +101,14 @@ namespace ProjectGame
                 $"Health: {player.GetHealth()}\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"\r\n" +
-                $"The lizards stats are ..." +
+                $"The lizards stats are ...\r\n" +
                 $"Attack Power: {lizard.GetAttackPower()}\r\n" +
                 $"Health: {lizard.GetHealth()}";
         }
         private string PathSix(Player player)
         {
             player.mustFight = false;
+            player.GainAttack();
             return $"Well you lucky little b*tch...\r\n" +
                 $"You made it to path 6 AND nothing to fight.\r\n" +
                 $"Rest easy, young padawan, for doom still awaits!\r\n" +
@@ -121,13 +123,14 @@ namespace ProjectGame
                 $"Health: {player.GetHealth()}\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"\r\n" +
-                $"The lizards stats are ..." +
+                $"The lizards stats are ...\r\n" +
                 $"Attack Power: {lizard.GetAttackPower()}\r\n" +
                 $"Health: {lizard.GetHealth()}";
         }
         private string PathEight(Player player)
         {
             player.mustFight = false;
+            player.GainAttack();
             return $"Alright alright, your luck WILL run out, I promise you!\r\n" +
                 $"MOVE ON with your stupid +10\r\n" +
                 $"GO ALREADY!";
@@ -142,7 +145,7 @@ namespace ProjectGame
                 $"Health: {player.GetHealth()}\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"\r\n" +
-                $"The lizards stats are ..." +
+                $"The lizards stats are ...\r\n" +
                 $"Attack Power: {lizard.GetAttackPower()}\r\n" +
                 $"Health: {lizard.GetHealth()}";
         }
@@ -158,7 +161,7 @@ namespace ProjectGame
                 $"Health: {player.GetHealth()}\r\n" +
                 $"Attack Power: {player.GetAttackPower()}\r\n" +
                 $"\r\n" +
-                $"The lizards stats are..." +
+                $"The lizards stats are...\r\n" +
                 $"Attack Power: {lizard.GetAttackPower()}\r\n" +
                 $"Health: {lizard.GetHealth()}";
         }

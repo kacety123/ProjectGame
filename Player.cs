@@ -18,7 +18,7 @@ namespace ProjectGame
         public Player(string name) {
             playerName = name;
             playerHealth = 100;
-            playerAttackPower = 0;
+            playerAttackPower = 10;
             isAlive = true;
             currentPath = 0;
         }
@@ -47,6 +47,5 @@ namespace ProjectGame
         {
             return playerHealth -= delta;
         }
-        public void GainHealth() { playerHealth += 10; }
     }
 }
